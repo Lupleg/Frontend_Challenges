@@ -48,7 +48,7 @@ nav ul li a {
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
-  height: 100%;
+  min-height: 80px;
 }
 
 .nav-links {
@@ -70,10 +70,19 @@ nav ul li a {
 .logo {
   padding-left: 50px;
 }
-.hambegar {
+.hamburger {
   display: none;
   color: green;
-  font-size: 20px;
+  font-size: 30px;
+  margin-right: 80px;
+  font-weight: bolder;
+}
+.cancel {
+  display: none;
+  color: green;
+  font-size: 25px;
+  margin-right: 80px;
+  font-weight: bolder;
 }
 
 /*Nav Dropdown styles */
@@ -109,11 +118,6 @@ nav ul li a {
   opacity: 1;
   transform: translateY(0);
 }
-.dropdown-content:hover {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .dropdown-content a:hover {
   background-color: #3e8e41;
@@ -123,42 +127,34 @@ nav ul li a {
   background-color: #ffffff;
 }
 
-/* Hero Section Styles */
-
-.hero {
-  background-image: url("	https://themewagon.github.io/learnit/img/banner/home-banner.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .hambegar {
-    display: block;
-  }
+@media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+    justify-self: start;
     position: absolute;
-    top: 80px;
+    top: 102px;
     left: 0;
     width: 100%;
-    background-color: #f9f9ff;
-    transition: all 0.5s ease;
+    background-color: #ffffff;
+    transition: all 0.8s ease;
+    height: 40vh;
+    padding-top: 50px;
   }
   .nav-links.active {
     display: flex;
   }
   .nav-links a {
     padding: 10px 0;
-    width: 100%;
+    min-width: 100%;
     text-align: center;
+  }
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid #f1f1f1;
+    padding-left: 20px;
+    padding-bottom: 10px;
   }
   .dropdown-content {
     position: static;
@@ -175,4 +171,94 @@ nav ul li a {
   .dropdown-content a:last-child {
     border-top: none;
   }
+}
+
+@media (max-width: 568px) {
+  .top-menu {
+    display: none;
+  }
+}
+@media (max-width: 550px) {
+  .nav-links {
+    top: 60px;
+  }
+  .logo {
+    padding-left: 20px;
+  }
+  .hamburger {
+    margin-right: 20px;
+  }
+  .cancel {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 668px) {
+  .nav-links {
+    top: 80px;
+  }
+}
+.main-menu.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.8s ease;
+  background-color: #ffffff;
+  transition: all 1.2s ease;
+}
+/* Hero Section Styles */
+
+.hero {
+  background-image: url("	https://themewagon.github.io/learnit/img/banner/home-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 130vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 55%;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+.hero .btn {
+  padding: 16px 25px;
+  background-color: rgb(38, 212, 38);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hero .btn:hover {
+  background-color: transparent;
+  color: rgb(38, 212, 38);
+  border: 1px solid rgb(38, 212, 38);
+}
+
+/* Styles for Departments */
+.departments {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
+  text-align: center;
 }
